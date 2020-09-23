@@ -4,6 +4,13 @@
     padding: 0;
 }
 
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
 .header {
     background-color: blueviolet;
 }
@@ -11,14 +18,18 @@
 .main {
     background-color: chartreuse;
     border: solid;
+    height: 100%;       /* use space between */
+    display: flex;
 }
 
 .aside {
     background-color: crimson;
+    flex: 1;
 }
 
 .section {
     background-color: darkorange;
+    flex: 4;
 }
 
 .footer {
