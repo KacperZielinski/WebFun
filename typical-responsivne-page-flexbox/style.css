@@ -35,3 +35,9 @@ body {
 .footer {
     background-color: green;
 }
+
+@media screen and (max-width: 540px) {
+    .main {
+        flex-direction: column;
+    }
+}
