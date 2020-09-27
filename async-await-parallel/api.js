@@ -4,6 +4,8 @@ const geoIPAPI = 'https://freegeoip.app/json/';
 
 // es8 (ecma 2017)
 async function parallel() {
+    let start = window.performance.now();
+
     const jokeRequest = fetch(jokeAPI).then(r => r.json());
     const bitcoinRequest = fetch(bitcoinAPI).then(r => r.json());
     const geoIPRequest = fetch(geoIPAPI).then(r => r.json());
@@ -19,9 +21,14 @@ async function parallel() {
     console.log(joke);
     console.log(bitcoin);
     console.log(geoIP);
+    
+    let end = window.performance.now();
+    console.log(`Execution time: ${end - start} ms`);
 }
 
-async function sequential(){
+async function sequential() {
+    let start = window.performance.now();
+
     const joke = await fetch(jokeAPI).then(r => r.json());
     const bitcoin = await fetch(bitcoinAPI).then(r => r.json());
     const geoIP = await fetch(geoIPAPI).then(r => r.json());
@@ -32,7 +39,10 @@ async function sequential(){
     console.log(joke);
     console.log(bitcoin);
     console.log(geoIP);
+
+    let end = window.performance.now();
+    console.log(`Execution time: ${end - start} ms`);
 }
 
 parallel();
-sequential();
+sequential();   // executed time is twice than making it parallel
