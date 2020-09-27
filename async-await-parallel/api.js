@@ -44,5 +44,31 @@ async function sequential() {
     console.log(`Execution time: ${end - start} ms`);
 }
 
-parallel();
-sequential();   // executed time is twice than making it parallel
+let tasks = [
+    async () => {
+        const joke = await fetch(jokeAPI).then(r => r.json());
+        document.getElementById('joke_SR').innerHTML = `${joke[0].setup} ${joke[0].punchline}`; 
+    },
+    async () => {
+        const bitcoin = await fetch(bitcoinAPI).then(r => r.json());
+        document.getElementById('bitcoin_SR').innerHTML = `1 bitcoin = ${bitcoin.bpi.USD.rate} $`; 
+    },
+    async () => {
+        const geoIP = await fetch(geoIPAPI).then(r => r.json());
+        document.getElementById('geoIP_SR').innerHTML = `My ip: ${geoIP.ip}`; 
+    }
+];
+
+async function parallelWithImmediatelyResult() {
+    let start = window.performance.now();
+
+    await Promise.allSettled(tasks.map(p => p()));  // you can use .all to reject all if at least one failure occured, now it will go work even if one of task fails. 
+    console.log('done');
+
+    let end = window.performance.now();
+    console.log(`Execution time: ${end - start} ms`);
+}
+
+sequential();   
+parallel(); // executed time is twice shorther than sequential
+parallelWithImmediatelyResult();    // good for multiple responses from microservices
