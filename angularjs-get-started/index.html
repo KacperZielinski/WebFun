@@ -13,9 +13,9 @@
         <div ng-controller="HelloController">
             {{ hello }}, bitcoin API says: 1 bitcoin = {{bitcoin}} {{currency}}
 
-            <form name="searchSth">
-                <input type="search" placeholder="Type in here something" ng-model="currency">
-                <input type="submit" value="Click" ng-click="search(currency)">
+            <form name="searchSth" ng-submit="search(currency)">
+                <input type="search" required placeholder="Type in here something" ng-model="currency">
+                <input type="submit" value="Click">
             </form>
         </div>
     </div>
