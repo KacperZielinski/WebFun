@@ -11,7 +11,12 @@
     <div ng-app="helloModule">
         Hello hell from Angular.js! {{ 32 / 8}}
         <div ng-controller="HelloController">
-            {{ hello }}, bitcoin API says: 1 bitcoin = {{bitcoin}} $
+            {{ hello }}, bitcoin API says: 1 bitcoin = {{bitcoin}} {{currency}}
+
+            <form name="searchSth">
+                <input type="search" placeholder="Type in here something" ng-model="currency">
+                <input type="submit" value="Click">
+            </form>
         </div>
     </div>
 </body>
