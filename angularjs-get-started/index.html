@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
-    <div ng-app>
+    <div ng-app="helloModule">
         Hello hell from Angular.js! {{ 32 / 8}}
+        <div ng-controller="HelloController">
+            {{ hello }}
+        </div>
     </div>
 </body>
 </html>
