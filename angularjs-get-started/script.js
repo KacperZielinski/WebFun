@@ -15,6 +15,11 @@
 
         $http.get(bitcoinAPI).then(onBitcoinResult, onError);
         $scope.hello = "Hello!";
+        $scope.currency = "$";
+
+        $scope.search = function(currency) {
+            alert('Do something with ' + currency);
+        }
     }
 
     app.controller('HelloController', ['$scope', '$http', HelloController]);
