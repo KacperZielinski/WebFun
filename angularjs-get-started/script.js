@@ -6,6 +6,6 @@
         $scope.hello = "Hello!";
     }
 
-    app.controller('HelloController', HelloController);
-    
+    app.controller('HelloController', ['$scope', HelloController]);
+
 }());
