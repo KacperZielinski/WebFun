@@ -8,7 +8,7 @@ class ExampleClassComponent extends React.Component {
 
     render() {
         return (
-            <div className="ecc">Hello from {this.state.type} component!</div>
+            <div className="ecc">Hello {this.props.firstName} from {this.state.type} component!</div>
         )
     }
 }
