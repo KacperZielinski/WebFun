@@ -1,0 +1,11 @@
+{
+  "name": "npm-demo",
+  "version": "1.0.0",
+  "description": "Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "testCommand"
+  },
+  "author": "KZ",
+  "license": "ISC"
+}
