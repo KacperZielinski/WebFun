@@ -2,4 +2,6 @@
 // bind
 // apply
 // this..
-
+// get, set
+// closures
+// promises

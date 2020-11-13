@@ -87,3 +87,20 @@ console.log(firstEl)
 console.log(secondEl)
 console.log(rest)
 
+// ecma2020
+const ob = {
+    a: {
+        b: {
+            c: 'gotcha'
+        }
+    }
+}
+
+let ccc = ob && ob.a && ob.a.b && ob.a.b.c;   // gives nested 'gotcha' without undefined errors
+ccc = ob?.a?.b?.c;  // the same here
+let backendArray = [];
+let res = backendArray?.length;
+console.log(res)
+backendArray = undefined;
+res = backendArray?.length; // without '?' it gives Reference Error, with '?' just string undefined.
+console.log(res)
