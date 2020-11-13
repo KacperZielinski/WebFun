@@ -67,14 +67,23 @@ console.log(newName)    // must be exactly the same as obj prop, here it gives u
 console.log(other)
 
 // pretty useful here
-const person1 = {
-    name: '1Stephan',
-    city: '1Wroclaw',
-    details: {
-        id: 152,
-        position: '1worker'
-    }
+const obj1 = {
+    obj_name: '1Stephan',
+    obj_city: '1Wroclaw',
 }
-[person, person1].map(p => p.name);
-[person, person1].map(({name}) => name);
+
+const obj2 = {
+    objName: '2Stephan',
+    objCity: '2Wroclaw',
+};
+// without ';' it yelling about variable is not initialized, that's why we should use ';'
+[obj1, obj2].map(p => p.objName);
+[obj1, obj2].map(({objName}) => objName);
+
+// another useful
+const arr = [1,2,3,4,5];
+const [firstEl, secondEl, ...rest] = arr;
+console.log(firstEl)
+console.log(secondEl)
+console.log(rest)
 

@@ -1,0 +1,5 @@
+// call
+// bind
+// apply
+// this..
+
