@@ -4,6 +4,7 @@ interface CarCompany {
   name: string;
   desc?: string;
   logoUrl: string;
+  notExists?: boolean;
 }
 
 @Component({
@@ -31,8 +32,9 @@ export class AppComponent {
       logoUrl: 'https://www.carlogos.org/car-logos/honda-logo.png'
     },
     {
-      name: 'Ford',
-      logoUrl: 'https://www.carlogos.org/car-logos/ford-logo.png'
+      name: 'Saab',
+      logoUrl: 'https://www.carlogos.org/car-logos/saab-logo.png',
+      notExists: true
     },
 
   ]

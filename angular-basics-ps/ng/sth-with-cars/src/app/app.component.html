@@ -4,11 +4,11 @@
       <div class="card">
         <img class="card-img-top" [src]="carCompany.logoUrl">
         <div class="card-body">
-          <h5 class="card-title">{{carCompany.name}}</h5>
+          <h5 class="card-title">{{carCompany.name}} <span class="badge badge-secondary" *ngIf="carCompany.notExists">Closed</span></h5>
           <div class="card-text">
             <p>{{carCompany.desc}}</p>
           </div>
-          <a href="#" [ngClass]="isOdd ? 'btn btn-primary dark' : 'btn btn-primary'">Buy car</a>
+          <a href="#" class="btn btn-primary" [class.dark]="isOdd || carCompany.notExists">Buy car</a>
         </div>
       </div>
     </div>
