@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-3" *ngFor="let carCompany of carCompanies">
+    <div class="col-lg-3" *ngFor="let carCompany of carCompanies; let isOdd = odd;">
       <div class="card">
         <img class="card-img-top" [src]="carCompany.logoUrl">
         <div class="card-body">
@@ -8,7 +8,7 @@
           <div class="card-text">
             <p>{{carCompany.desc}}</p>
           </div>
-          <a href="#" class="btn btn-primary">Buy car</a>
+          <a href="#" [ngClass]="isOdd ? 'btn btn-primary dark' : 'btn btn-primary'">Buy car</a>
         </div>
       </div>
     </div>
