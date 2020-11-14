@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sth-with-cars"
+    }
+  },
+  "defaultProject": "sth-with-cars",
+  "cli": {
+    "analytics": false
+  }
 }
