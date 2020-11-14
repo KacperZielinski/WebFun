@@ -1,60 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-3">
+    <div class="col-lg-3" *ngFor="let carCompany of carCompanies">
       <div class="card">
-        <img class="card-img-top" src="https://www.carlogos.org/car-logos/peugeot-logo.png">
+        <img class="card-img-top" src="{{carCompany.logoUrl}}">
         <div class="card-body">
-          <h5 class="card-title">Peugeot</h5>
+          <h5 class="card-title">{{carCompany.name}}</h5>
           <div class="card-text">
-            <p>Francja, Sochaux, 1810</p>
-          </div>
-          <a href="#" class="btn btn-primary">Buy car</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://www.carlogos.org/car-logos/peugeot-logo.png">
-        <div class="card-body">
-          <h5 class="card-title">Peugeot</h5>
-          <div class="card-text">
-            <p>Francja, Sochaux, 1810</p>
-          </div>
-          <a href="#" class="btn btn-primary">Buy car</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://www.carlogos.org/car-logos/peugeot-logo.png">
-        <div class="card-body">
-          <h5 class="card-title">Peugeot</h5>
-          <div class="card-text">
-            <p>Francja, Sochaux, 1810</p>
-          </div>
-          <a href="#" class="btn btn-primary">Buy car</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://www.carlogos.org/car-logos/peugeot-logo.png">
-        <div class="card-body">
-          <h5 class="card-title">Peugeot</h5>
-          <div class="card-text">
-            <p>Francja, Sochaux, 1810</p>
-          </div>
-          <a href="#" class="btn btn-primary">Buy car</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://www.carlogos.org/car-logos/peugeot-logo.png">
-        <div class="card-body">
-          <h5 class="card-title">Peugeot</h5>
-          <div class="card-text">
-            <p>Francja, Sochaux, 1810</p>
+            <p>{{carCompany.desc}}</p>
           </div>
           <a href="#" class="btn btn-primary">Buy car</a>
         </div>
