@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {CarCompanyModule} from "./car-company/car-company.module";
 import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
@@ -13,7 +12,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    CarCompanyModule,
     AppRoutingModule
   ],
   providers: [],
