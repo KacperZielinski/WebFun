@@ -1,6 +1,7 @@
 <div class="container">
   <h1 class="display-4">Top Car Companies</h1>
   <div class="row">
-    <app-car-company-item class="col-lg-3" [carCompany]="carCompany" *ngFor="let carCompany of carCompanies"></app-car-company-item>
+    <app-car-company-item class="col-lg-3" [carCompany]="carCompany" *ngFor="let carCompany of carCompanies$ | async"></app-car-company-item>
   </div>
 </div>
+

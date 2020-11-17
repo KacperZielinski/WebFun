@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CarCompany} from "../car-company";
+import {Observable} from "rxjs";
+import {CarClientService} from "../car-client.service";
 
 @Component({
   selector: 'app-car-company-list',
@@ -8,36 +10,14 @@ import {CarCompany} from "../car-company";
 })
 export class CarCompanyListComponent implements OnInit {
 
-  carCompanies: CarCompany[] = [
-    {
-      name: 'Peugeot',
-      desc: 'Francja, Sochaux, 1810',
-      logoUrl: 'https://www.carlogos.org/car-logos/peugeot-logo.png'
-    },
-    {
-      name: 'Citroen',
-      logoUrl: 'https://www.carlogos.org/car-logos/citroen-logo.png'
-    },
-    {
-      name: 'BMW',
-      logoUrl: 'https://www.carlogos.org/car-logos/bmw-logo.png'
-    },
-    {
-      name: 'Honda',
-      logoUrl: 'https://www.carlogos.org/car-logos/honda-logo.png'
-    },
-    {
-      name: 'Saab',
-      logoUrl: 'https://www.carlogos.org/car-logos/saab-logo.png',
-      notExists: true
-    },
+  carCompanies$: Observable<CarCompany[]>
 
-  ]
-
-  constructor() { }
+  constructor(private carClient: CarClientService) { }
 
   ngOnInit(): void {
+    this.carCompanies$ = this.carClient.getBooks()
   }
 
 
 }
+
