@@ -7,5 +7,9 @@
     "test": "testCommand"
   },
   "author": "KZ",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "lodash": "^4.17.20"
+  }
 }

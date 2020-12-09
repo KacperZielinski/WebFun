@@ -1,5 +1,14 @@
 <template>
   <div class="hello">
+    <h2 v-bind:style="eyeColor">
+      Hello from {{ name }}
+      <div :style="otherColor">
+        Inputed whooo
+        <button v-on:click="handleClick">Bite me!</button>
+        <button @click="handleClick">I'm doing the same..!</button>
+      </div>
+      <input name="color" id="color" v-model="otherColor.color" />
+    </h2>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -35,7 +44,24 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      name: 'Kacper',
+      eyeColor: {
+        color: '#aba'
+      },
+      otherColor: {
+        color: '#0ba'
+      }
+    }
+  },
+  methods: {
+    handleClick() {
+      alert("executed");
+    }
   }
+
 }
 </script>
 
